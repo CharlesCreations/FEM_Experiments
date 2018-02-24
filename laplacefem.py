@@ -35,7 +35,7 @@ def fem_mat(node, elm):
                     A[e[j],e[i]] = A[e[i],e[j]] # symmetry
     return A
 
-print("Starting")
+print("Starting...")
 L, N = 1.0, 40                              # length of square, number of intervals
 node, elm, bp, ip, bv, x, y = mesh(L,N)     # generate mesh
 print(node, elm, bp, ip, bv, x, y)
