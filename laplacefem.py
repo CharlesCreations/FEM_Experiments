@@ -1,3 +1,5 @@
+# Credit to Jay Wang's book Computational Modeling and visualization of physical systems with python for the core for this code. Small additional modifications made by myself.
+
 from scipy.linalg import solve
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt, numpy as np
@@ -36,8 +38,10 @@ def fem_mat(node, elm):
 print("Starting")
 L, N = 1.0, 40                              # length of square, number of intervals
 node, elm, bp, ip, bv, x, y = mesh(L,N)     # generate mesh
+print(node, elm, bp, ip, bv, x, y)
 ip.sort()                                   # sort ip, just in case
 A, b = fem_mat(node,elm), np.zeros(len(ip)) # build matricies
+print(A)
 for j in range(len(ip)):
     b[j] = np.dot(A[ip[j], bp], bv)          # boundary conditions Eq. (7.23)
 
